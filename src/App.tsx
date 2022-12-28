@@ -74,7 +74,8 @@ function App() {
   return (
     <div className="App">
       <div style={{ top: 0, left: 0, position: "absolute" }}>
-        <p style={{ margin: 0 }}>Cade Weiskopf</p>
+        <p style={{ margin: 0 }}>Stupid App</p>
+        <div style={{ fontSize: "12px" }}>By Cade Weiskopf</div>
       </div>
       <p>{count}</p>
       <Counter count={count} handleSetCount={handleSetCount} />
