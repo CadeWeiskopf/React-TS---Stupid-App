@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
+import Confetti from "react-confetti";
 import "./App.css";
 import Counter from "./components/Counter";
 import Rainbow from "./components/Rainbow";
 import Slider from "./components/Slider";
 
 const BRIGHTNESS_SCALAR = 20;
-
 function App() {
   const [count, setCount] = useState<number>(0);
   const handleSetCount = (newCount: number) => {
@@ -80,6 +80,11 @@ function App() {
       </div>
       <p>{count}</p>
       <Counter count={count} handleSetCount={handleSetCount} />
+      <Confetti
+        numberOfPieces={count * count}
+        gravity={0.001 * count}
+        wind={0.0001 * count * (Math.random() > 0.5 ? 1 : -1)}
+      />
       <br />
       <Rainbow />
       <Slider
