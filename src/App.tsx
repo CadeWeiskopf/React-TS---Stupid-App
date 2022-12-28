@@ -23,11 +23,17 @@ function App() {
   const [mouseX, setMouseX] = useState<number>(0);
   const [mouseY, setMouseY] = useState<number>(0);
   useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      setMouseX(event.clientX);
-      setMouseY(event.clientY);
+    const handleMouseMove = (event: MouseEvent | TouchEvent) => {
+      if (event instanceof MouseEvent) {
+        setMouseX(event.clientX);
+        setMouseY(event.clientY);
+      } else {
+        setMouseX(event.touches[0].clientX);
+        setMouseY(event.touches[0].clientY);
+      }
     };
     window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("touchmove", handleMouseMove);
 
     // Remove the event listener when the component unmounts
     return () => {
