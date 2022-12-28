@@ -9,7 +9,7 @@ const Counter: React.FunctionComponent<CounterProps> = ({
 }) => {
   return (
     <div>
-      <div>
+      <div style={{ maxWidth: "200px", width: "100%" }}>
         <button
           className="gradient-button"
           onClick={() => handleSetCount(count + 1)}
