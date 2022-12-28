@@ -1,11 +1,16 @@
+:root {
+  --count-background-color: #282c34;
+  --count-text-color: white;
+}
+
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: var(--count-background-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--count-text-color);
 }
