@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Counter from "./components/Counter";
 import Rainbow from "./components/Rainbow";
+import Slider from "./components/Slider";
 
 const BRIGHTNESS_SCALAR = 20;
 
@@ -81,6 +82,11 @@ function App() {
       <Counter count={count} handleSetCount={handleSetCount} />
       <br />
       <Rainbow />
+      <Slider
+        count={count}
+        brightnessScalar={BRIGHTNESS_SCALAR}
+        handleSetCount={handleSetCount}
+      />
     </div>
   );
 }
