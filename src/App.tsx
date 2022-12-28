@@ -20,7 +20,7 @@ function App() {
     const numOfP = pElements.length;
     if (textValue - bgValue < 100) {
       for (let i = 0; i < numOfP; i++) {
-        pElements[i].style.webkitTextStroke = "1px black";
+        pElements[i].style.webkitTextStroke = "0.8px black";
         pElements[i].style.webkitTextFillColor = "white";
       }
     } else {
@@ -74,9 +74,7 @@ function App() {
   return (
     <div className="App">
       <div style={{ top: 0, left: 0, position: "absolute" }}>
-        <p style={{ margin: 0 }}>
-          {mouseX},{mouseY}
-        </p>
+        <p style={{ margin: 0 }}>Cade Weiskopf</p>
       </div>
       <p>{count}</p>
       <Counter count={count} handleSetCount={handleSetCount} />
