@@ -14,7 +14,9 @@ const Counter: React.FunctionComponent<CounterProps> = ({
           className="gradient-button"
           onClick={() => handleSetCount(count + 1)}
         >
-          Make it Brighter
+          <p>
+            <big style={{ fontSize: "24px" }}>Brighter</big>
+          </p>
         </button>
       </div>
       <div>
@@ -22,7 +24,9 @@ const Counter: React.FunctionComponent<CounterProps> = ({
           className="gradient-button"
           onClick={() => handleSetCount(count - 1)}
         >
-          Make it Darker
+          <p>
+            <big style={{ fontSize: "24px" }}>Darker</big>
+          </p>
         </button>
       </div>
     </div>

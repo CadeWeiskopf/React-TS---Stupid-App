@@ -83,7 +83,7 @@ function App() {
       {count > 0 && (
         <Confetti
           numberOfPieces={count * count}
-          gravity={0.001 * count}
+          gravity={0.01 * count}
           wind={0.0001 * count * (Math.random() > 0.5 ? 1 : -1)}
         />
       )}

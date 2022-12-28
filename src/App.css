@@ -22,7 +22,8 @@
 .gradient-button {
   position: relative;
   border: 2px solid transparent;
-  color: black;
+  background-color: transparent;
+  color: var(--count-text-color);
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
