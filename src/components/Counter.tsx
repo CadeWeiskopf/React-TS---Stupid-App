@@ -10,7 +10,14 @@ const Counter: React.FunctionComponent<CounterProps> = ({
   return (
     <div className="counter-div">
       <div className="counter-div">
-        <button onClick={() => handleSetCount(count + 1)}>
+        <button
+          style={{
+            backgroundColor: "white",
+            color: "#282c34",
+            borderColor: "#282c34",
+          }}
+          onClick={() => handleSetCount(count + 1)}
+        >
           Make it Brighter
         </button>
       </div>
