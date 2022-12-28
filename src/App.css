@@ -14,3 +14,11 @@
   font-size: calc(10px + 2vmin);
   color: var(--count-text-color);
 }
+
+.rainbow {
+  background: radial-gradient(red, orange, yellow, green, blue, indigo, violet);
+  min-width: 50vw;
+  width: 50vw;
+  min-height: 50vh;
+  height: 50vh;
+}
