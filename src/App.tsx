@@ -80,11 +80,13 @@ function App() {
       </div>
       <p>{count}</p>
       <Counter count={count} handleSetCount={handleSetCount} />
-      <Confetti
-        numberOfPieces={count * count}
-        gravity={0.001 * count}
-        wind={0.0001 * count * (Math.random() > 0.5 ? 1 : -1)}
-      />
+      {count > 0 && (
+        <Confetti
+          numberOfPieces={count * count}
+          gravity={0.001 * count}
+          wind={0.0001 * count * (Math.random() > 0.5 ? 1 : -1)}
+        />
+      )}
       <br />
       <Rainbow />
       <Slider

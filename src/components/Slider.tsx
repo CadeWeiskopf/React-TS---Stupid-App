@@ -14,7 +14,7 @@ const Slider: React.FunctionComponent<SliderProps> = ({
       <input
         type="range"
         min={0}
-        max={255 / brightnessScalar}
+        max={50}
         value={count}
         onChange={(event) => {
           handleSetCount(Number(event.target.value));
