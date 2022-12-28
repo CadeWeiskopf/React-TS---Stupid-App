@@ -8,25 +8,18 @@ const Counter: React.FunctionComponent<CounterProps> = ({
   handleSetCount,
 }) => {
   return (
-    <div className="counter-div">
-      <div className="counter-div">
+    <div>
+      <div>
         <button
-          style={{
-            backgroundColor: "white",
-            color: "#282c34",
-            borderColor: "#282c34",
-          }}
+          className="gradient-button"
           onClick={() => handleSetCount(count + 1)}
         >
           Make it Brighter
         </button>
       </div>
-      <div className="counter-div">
+      <div>
         <button
-          style={{
-            backgroundColor: "#282c34",
-            color: "white",
-          }}
+          className="gradient-button"
           onClick={() => handleSetCount(count - 1)}
         >
           Make it Darker

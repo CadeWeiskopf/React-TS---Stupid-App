@@ -19,15 +19,116 @@
   color: var(--count-text-color);
 }
 
-.counter-div {
-  width: 100%;
-  max-width: 400px;
+.gradient-button {
+  position: relative;
+  border: 2px solid transparent;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.counter-div > button {
-  padding: 1rem;
-  width: 200px;
-  border-radius: 1%;
+.gradient-button:hover {
+  border: 2px solid black;
+  border-image: linear-gradient(
+      to right,
+      #ff0000,
+      #ffff00,
+      #00ff00,
+      #00ffff,
+      #0000ff,
+      #ff00ff,
+      #ff0000
+    )
+    1;
+  animation: button-gradient-animation 1s linear infinite;
+}
+
+@keyframes button-gradient-animation {
+  0% {
+    border-image: linear-gradient(
+      to right,
+      #ff0000,
+      #ffff00,
+      #00ff00,
+      #00ffff,
+      #0000ff,
+      #ff00ff
+    );
+    border-image-slice: 1;
+  }
+  16% {
+    border-image: linear-gradient(
+      to right,
+      #ff00ff,
+      #ff0000,
+      #ffff00,
+      #00ff00,
+      #00ffff,
+      #0000ff
+    );
+    border-image-slice: 1;
+  }
+  32% {
+    border-image: linear-gradient(
+      to right,
+      #0000ff,
+      #ff00ff,
+      #ff0000,
+      #ffff00,
+      #00ff00,
+      #00ffff
+    );
+    border-image-slice: 1;
+  }
+  48% {
+    border-image: linear-gradient(
+      to right,
+      #00ffff,
+      #0000ff,
+      #ff00ff,
+      #ff0000,
+      #ffff00,
+      #00ff00
+    );
+    border-image-slice: 1;
+  }
+  62% {
+    border-image: linear-gradient(
+      to right,
+      #00ff00,
+      #00ffff,
+      #0000ff,
+      #ff00ff,
+      #ff0000,
+      #ffff00
+    );
+    border-image-slice: 1;
+  }
+  78% {
+    border-image: linear-gradient(
+      to right,
+      #ffff00,
+      #00ff00,
+      #00ffff,
+      #0000ff,
+      #ff00ff,
+      #ff0000
+    );
+    border-image-slice: 1;
+  }
+  100% {
+    border-image: linear-gradient(
+      to right,
+      #ff0000,
+      #ffff00,
+      #00ff00,
+      #00ffff,
+      #0000ff,
+      #ff00ff
+    );
+    border-image-slice: 1;
+  }
 }
 
 .rainbow {

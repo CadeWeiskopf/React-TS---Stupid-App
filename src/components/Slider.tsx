@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 interface SliderProps {
   count: number;
   brightnessScalar: number;
