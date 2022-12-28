@@ -3,6 +3,8 @@ import "./App.css";
 import Counter from "./components/Counter";
 import Rainbow from "./components/Rainbow";
 
+const BRIGHTNESS_SCALAR = 20;
+
 function App() {
   const [count, setCount] = useState<number>(0);
   const handleSetCount = (newCount: number) => {
@@ -10,13 +12,30 @@ function App() {
     setCount(newCount);
   };
   useEffect(() => {
+    const bgValue = count * BRIGHTNESS_SCALAR;
+    const textValue = 255 - bgValue;
+
+    // Add border to p text if could be hard to distinguish
+    const pElements = document.getElementsByTagName("p");
+    const numOfP = pElements.length;
+    if (textValue - bgValue < 100) {
+      for (let i = 0; i < numOfP; i++) {
+        pElements[i].style.webkitTextStroke = "1px black";
+        pElements[i].style.webkitTextFillColor = "white";
+      }
+    } else {
+      for (let i = 0; i < numOfP; i++) {
+        pElements[i].style.webkitTextStroke = "";
+      }
+    }
+
     document.documentElement.style.setProperty(
       "--count-background-color",
-      `rgba(${count * 2},${count * 2},${count * 2},1)`
+      `rgba(${bgValue},${bgValue},${bgValue},1)`
     );
     document.documentElement.style.setProperty(
       "--count-text-color",
-      `rgba(${255 - count * 2},${255 - count * 2},${255 - count * 2},1)`
+      `rgba(${textValue},${textValue},${textValue},1)`
     );
   }, [count]);
 
@@ -55,9 +74,11 @@ function App() {
   return (
     <div className="App">
       <div style={{ top: 0, left: 0, position: "absolute" }}>
-        {mouseX},{mouseY}
+        <p style={{ margin: 0 }}>
+          {mouseX},{mouseY}
+        </p>
       </div>
-      {count}
+      <p>{count}</p>
       <Counter count={count} handleSetCount={handleSetCount} />
       <br />
       <Rainbow />

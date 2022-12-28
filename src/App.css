@@ -1,4 +1,7 @@
 :root {
+  /*
+  These get overwritten immediately
+  */
   --count-background-color: #282c34;
   --count-text-color: white;
   --rainbow-at: 0% 0%;
@@ -14,6 +17,17 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: var(--count-text-color);
+}
+
+.counter-div {
+  width: 100%;
+  max-width: 400px;
+}
+
+.counter-div > button {
+  padding: 1rem;
+  width: 200px;
+  border-radius: 1%;
 }
 
 .rainbow {

@@ -8,13 +8,21 @@ const Counter: React.FunctionComponent<CounterProps> = ({
   handleSetCount,
 }) => {
   return (
-    <div>
-      <div>
-        <button onClick={() => handleSetCount(count + 1)}>Click to add</button>
+    <div className="counter-div">
+      <div className="counter-div">
+        <button onClick={() => handleSetCount(count + 1)}>
+          Make it Brighter
+        </button>
       </div>
-      <div>
-        <button onClick={() => handleSetCount(count - 1)}>
-          Click to remove
+      <div className="counter-div">
+        <button
+          style={{
+            backgroundColor: "#282c34",
+            color: "white",
+          }}
+          onClick={() => handleSetCount(count - 1)}
+        >
+          Make it Darker
         </button>
       </div>
     </div>
