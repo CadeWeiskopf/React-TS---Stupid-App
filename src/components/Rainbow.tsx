@@ -3,7 +3,7 @@ interface RainbowProps {}
 const Rainbow: React.FunctionComponent<RainbowProps> = ({}) => {
   return (
     <div>
-      <div className="rainbow"></div>
+      <div id="rainbow-div-id" className="rainbow"></div>
     </div>
   );
 };

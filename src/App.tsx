@@ -20,8 +20,37 @@ function App() {
     );
   }, [count]);
 
+  const [mouseX, setMouseX] = useState<number>(0);
+  const [mouseY, setMouseY] = useState<number>(0);
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      setMouseX(event.clientX);
+      setMouseY(event.clientY);
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+
+    // Remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+  useEffect(() => {
+    const rainbowDiv = document.getElementById("rainbow-div-id");
+    if (rainbowDiv === null) return;
+
+    const distanceFromTop = rainbowDiv.offsetTop;
+    const distanceFromLeft = rainbowDiv.offsetLeft;
+    document.documentElement.style.setProperty(
+      "--rainbow-at",
+      `${mouseX - distanceFromLeft}px ${mouseY - distanceFromTop}px`
+    );
+  }, [mouseX, mouseY]);
+
   return (
     <div className="App">
+      <div style={{ top: 0, left: 0, position: "absolute" }}>
+        {mouseX},{mouseY}
+      </div>
       {count}
       <Counter count={count} handleSetCount={handleSetCount} />
       <br />

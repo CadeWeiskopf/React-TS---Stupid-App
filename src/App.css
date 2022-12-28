@@ -1,6 +1,7 @@
 :root {
   --count-background-color: #282c34;
   --count-text-color: white;
+  --rainbow-at: 0% 0%;
 }
 
 .App {
@@ -16,7 +17,16 @@
 }
 
 .rainbow {
-  background: radial-gradient(red, orange, yellow, green, blue, indigo, violet);
+  background: radial-gradient(
+    at var(--rainbow-at),
+    #ff0000,
+    #ffff00,
+    #00ff00,
+    #00ffff,
+    #0000ff,
+    #ff00ff,
+    #ff0000
+  );
   min-width: 50vw;
   width: 50vw;
   min-height: 50vh;
