@@ -85,6 +85,7 @@ function App() {
           numberOfPieces={count * count}
           gravity={0.01 * count}
           wind={0.0001 * count * (Math.random() > 0.5 ? 1 : -1)}
+          style={{ width: "100%", height: "100%" }}
         />
       )}
       <br />
